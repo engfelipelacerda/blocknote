@@ -15,7 +15,7 @@ class Tables {
      `;
     try {
       await this.connection.query(sql);
-      console.log("Criou a tabela com sucesso");
+      console.log("Tabela notes verificada com sucesso");
     } catch (error) {
       console.log("Deu erro na hora de criar a tabela notes");
       console.log(error.message);
