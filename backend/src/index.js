@@ -1,9 +1,15 @@
 import express from "express"; // chamar o servidor express
-import sourceRoute from "./routes/sourceRoute.js";
 const app = express(); // atribuir a variável app para usar o express;
 const port = 3333;
 
 app.use(express.json());
+
+import sourceRoute from "./routes/sourceRoute.js";
+
+import connection from "./database/connection.js";
+import tables from "./database/tables.js";
+
+tables.init(connection);
 
 // todas as rotas dentro de sourceRoute vão começar em /
 app.use("/", sourceRoute);
